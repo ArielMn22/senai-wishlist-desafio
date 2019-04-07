@@ -1,0 +1,3 @@
+Scaffold-DbContext "Data Source=.\SqlExpress; Initial Catalog=WISHLIST_DESAFIO; user id=sa; pwd=132" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -Context WishlistContext
+
+Scaffold-DbContext "Data Source=.\SqlExpress; Initial Catalog=WISHLIST_DESAFIO; integrated security=true" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Domains -ContextDir Contexts -Context WishlistContext
