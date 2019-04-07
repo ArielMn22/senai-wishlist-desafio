@@ -5,17 +5,25 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Senai.Wishlist.Desafio.Interfaces;
 
 namespace Senai.Wishlist.Desafio.Controllers
 {
-    [Produces("application/json")]
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("api/[controller]")]
+    [Produces("application/json")]
     public class UsuariosController : ControllerBase
     {
-        [HttpGet]
+        //private IUsuarioRepository UsuarioRepository { get; set; }
+
+        //public UsuariosController()
+        //{
+        //    UsuarioRepository = new UsuarioRepository();
+        //}
+
+        [HttpPost]
         //[Authorize]
-        public IActionResult ListarUsuarios()
+        public IActionResult CadastrarUsuario()
         {
             try
             {
