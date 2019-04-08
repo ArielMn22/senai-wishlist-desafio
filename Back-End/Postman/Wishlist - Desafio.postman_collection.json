@@ -12,10 +12,17 @@
 					"name": "Cadastrar Usuário",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": ""
+							"raw": "{\n\t\"nome\" : \"ArielMn22\",\n\t\"email\" : \"arielpaixao10@gmail.com\",\n\t\"senha\" : \"12345\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:5000/api/usuarios",
@@ -51,7 +58,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"email\":\"ariel@gmail.com\",\n\t\"senha\":\"ariel\"\n}"
+							"raw": "{\n\t\"email\" : \"ariel@gmail.com\",\n\t\"senha\" : \"ariel\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:5000/api/login",
@@ -80,7 +87,7 @@
 						"header": [
 							{
 								"key": "Authorization",
-								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFyaWVsQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJleHAiOjE1NTQ2NzkxNzMsImlzcyI6Ildpc2hsaXN0LldlYkFwaSIsImF1ZCI6Ildpc2hsaXN0LldlYkFwaSJ9.0xr0FwNS3LBuBrcGsURHVJD8SGSepxwG1OrCYI6EyFw",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFyaWVscGFpeGFvMTBAZ21haWwuY29tIiwianRpIjoiNSIsImV4cCI6MTU1NDczODQ4OCwiaXNzIjoiV2lzaGxpc3QuV2ViQXBpIiwiYXVkIjoiV2lzaGxpc3QuV2ViQXBpIn0.MrH1gJvd1yJHMZCxpdpn5V7XCuPSsl4hXCuIjq8dcGM",
 								"type": "text"
 							}
 						],
@@ -115,6 +122,11 @@
 								"key": "Content-Type",
 								"name": "Content-Type",
 								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFyaWVsQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJleHAiOjE1NTQ2NzkzNDYsImlzcyI6Ildpc2hsaXN0LldlYkFwaSIsImF1ZCI6Ildpc2hsaXN0LldlYkFwaSJ9.cO5gDzcbinkOOGR1eKeOikjfiPSjM9rspxZErmidqi8",
 								"type": "text"
 							}
 						],
@@ -185,11 +197,16 @@
 								"name": "Content-Type",
 								"value": "application/json",
 								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFyaWVscGFpeGFvMTBAZ21haWwuY29tIiwianRpIjoiNSIsImV4cCI6MTU1NDczMjIxOSwiaXNzIjoiV2lzaGxpc3QuV2ViQXBpIiwiYXVkIjoiV2lzaGxpc3QuV2ViQXBpIn0.bgqwfViQ-ZpSFag53_quq3N7yxX4yXR1ANhhsVLSe0w",
+								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\n}"
+							"raw": "{\n\t\"idVerbo\": 1,\n\t\"descricao\": \"Quero comprar uma bike da caloi\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:5000/api/desejos",
@@ -201,6 +218,79 @@
 							"path": [
 								"api",
 								"desejos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Atualizar Desejo",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFyaWVsQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJleHAiOjE1NTQ3Mzg1NzksImlzcyI6Ildpc2hsaXN0LldlYkFwaSIsImF1ZCI6Ildpc2hsaXN0LldlYkFwaSJ9.6yI5WzlhOzAxgcNWbKi5KAB0NOUM9yHS7hVxxKN8FQo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"id\": 1,\n\t\"descricao\": \"Comprar PC da NASA 2\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/desejos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"desejos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Deletar Desejo",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFyaWVsQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJleHAiOjE1NTQ3Mzg1NzksImlzcyI6Ildpc2hsaXN0LldlYkFwaSIsImF1ZCI6Ildpc2hsaXN0LldlYkFwaSJ9.6yI5WzlhOzAxgcNWbKi5KAB0NOUM9yHS7hVxxKN8FQo",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/desejos/4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"desejos",
+								"4"
 							]
 						}
 					},

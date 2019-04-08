@@ -10,6 +10,32 @@ namespace Senai.Wishlist.Desafio.Repositories
 {
     public class DesejoRepository : IDesejoRepository
     {
+        public void AtualizarDesejo(Desejos desejoCadastrado, Desejos desejoNovo)
+        {
+            if (desejoNovo.Descricao != null)
+            {
+                desejoCadastrado.Descricao = desejoNovo.Descricao;
+            }
+
+            desejoCadastrado.DataCriacao = DateTime.Now;
+
+            using (WishlistContext ctx = new WishlistContext())
+            {
+                ctx.Desejos.Update(desejoCadastrado);
+                ctx.SaveChanges();
+            }
+        }
+
+        public Desejos BuscarDesejoPorId(int id)
+        {
+            using (WishlistContext ctx = new WishlistContext())
+            {
+                return ctx.Desejos
+                    .Include(x => x.IdUsuarioNavigation)
+                    .FirstOrDefault(x => x.Id == id);
+            }
+        }
+
         public void CadastrarDesejo(Desejos desejo)
         {
             using (WishlistContext ctx = new WishlistContext())
@@ -19,11 +45,23 @@ namespace Senai.Wishlist.Desafio.Repositories
             }
         }
 
+        public void DeletarDesejo(Desejos desejo)
+        {
+            using (WishlistContext ctx = new WishlistContext())
+            {
+                ctx.Desejos.Remove(desejo);
+                ctx.SaveChanges();
+            }
+        }
+
         public List<Desejos> ListarDesejosPorNomeUsuario(string usuarioNome)
         {
             using (WishlistContext ctx = new WishlistContext())
             {
-                return ctx.Desejos.Where(x => x.IdUsuarioNavigation.Nome == usuarioNome).Include(x => x.IdVerboNavigation).ToList();
+                return ctx.Desejos
+                    .Where(x => x.IdUsuarioNavigation.Nome == usuarioNome)
+                    .Include(x => x.IdVerboNavigation)
+                    .ToList();
             }
         }
 

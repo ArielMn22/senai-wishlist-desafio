@@ -105,5 +105,64 @@ namespace Senai.Wishlist.Desafio.Controllers
                 });
             }
         }
+
+        [HttpPut]
+        [Authorize]
+        public IActionResult AtualizarDesejo(Desejos novoDesejo)
+        {
+            try
+            {
+                int usuarioId = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+                Desejos desejoProcurado = DesejoRepository.BuscarDesejoPorId(novoDesejo.Id);
+
+                if (desejoProcurado == null || desejoProcurado.IdUsuarioNavigation.Id != usuarioId)
+                {
+                    return BadRequest(new {
+                        mensagem = "Desejo não encontrado, verifique se não está tentando apagar um desejo de outro usuário."
+                    });
+                }
+
+                DesejoRepository.AtualizarDesejo(desejoProcurado, novoDesejo);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    mensagem = "Erro: " + ex
+                });
+            }
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize]
+        public IActionResult DeletarDesejo(int id)
+        {
+            try
+            {
+                int usuarioId = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+                Desejos desejoProcurado = DesejoRepository.BuscarDesejoPorId(id);
+
+                if (desejoProcurado == null || desejoProcurado.IdUsuarioNavigation.Id != usuarioId)
+                {
+                    return BadRequest(new
+                    {
+                        mensagem = "Desejo não encontrado, verifique se não está tentando apagar um desejo de outro usuário."
+                    });
+                }
+
+                DesejoRepository.DeletarDesejo(desejoProcurado);
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(new
+                {
+                    mensagem = "Erro: " + ex
+                });
+            }
+        }
     }
 }

@@ -32,5 +32,24 @@ namespace Senai.Wishlist.Desafio.Interfaces
         /// Cadastra um desejo.
         /// </summary>
         void CadastrarDesejo(Desejos desejo);
+
+        /// <summary>
+        /// Atualiza um desejo.
+        /// </summary>
+        /// <param name="desejo">Um Desejos Object</param>
+        void AtualizarDesejo(Desejos desejoCadastrado, Desejos desejoNovo);
+
+        /// <summary>
+        /// Deleta um desejo do banco de dados
+        /// </summary>
+        /// <param name="id">Id do desejo a ser deletado.</param>
+        void DeletarDesejo(Desejos desejo);
+
+        /// <summary>
+        /// Busca um desejo pelo seu Id.
+        /// </summary>
+        /// <param name="id">Id do desejo</param>
+        /// <returns>Retona um 'Desejos' object</returns>
+        Desejos BuscarDesejoPorId(int id);
     }
 }
