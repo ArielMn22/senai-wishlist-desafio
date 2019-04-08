@@ -47,6 +47,7 @@ namespace Senai.Wishlist.Desafio.Controllers
                     {
                     new Claim(JwtRegisteredClaimNames.Email, usuarioProcurado.Email),
                     new Claim(JwtRegisteredClaimNames.Jti, usuarioProcurado.Id.ToString()),
+                    new Claim(ClaimTypes.Name, usuarioProcurado.Nome) // Adicionar o nome do usuário nas Claims
                     //new Claim(ClaimTypes.Role, usuarioProcurado.IdTipoUsuarioNavigation.Nome) // Adicionar Tipo de usuário
                 };
 
