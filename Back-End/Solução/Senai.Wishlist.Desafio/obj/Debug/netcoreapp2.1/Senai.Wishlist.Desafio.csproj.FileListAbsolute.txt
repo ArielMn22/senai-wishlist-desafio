@@ -1,0 +1,14 @@
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\bin\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.deps.json
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\bin\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.runtimeconfig.json
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\bin\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.runtimeconfig.dev.json
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\bin\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.dll
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\obj\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.csprojAssemblyReference.cache
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\obj\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.csproj.CoreCompileInputs.cache
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\obj\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.RazorAssemblyInfo.cache
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\obj\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.RazorAssemblyInfo.cs
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\obj\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.AssemblyInfoInputs.cache
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\obj\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.AssemblyInfo.cs
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\obj\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.RazorTargetAssemblyInfo.cache
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\bin\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.pdb
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\obj\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.dll
+C:\Users\33747821839\Documents\Ariel\senai-wishlist-desafio\Back-End\Solução\Senai.Wishlist.Desafio\obj\Debug\netcoreapp2.1\Senai.Wishlist.Desafio.pdb
