@@ -21,5 +21,12 @@ namespace Senai.Wishlist.Desafio.Interfaces
         ///// <param name="login">LoginViewModel</param>
         ///// <returns>Um usuário caso encontre, caso contrário, nulo</returns>
         Usuarios BuscarUsuarioPorEmailESenha(LoginViewModel login);
+
+        /// <summary>
+        /// Busca um usuário pelo seu Id.
+        /// </summary>
+        /// <param name="id">Id do usuário</param>
+        /// <returns>Um Objeto 'Usuarios'</returns>
+        Usuarios BuscarUsuarioPorId(int id);
     }
 }

@@ -18,6 +18,14 @@ namespace Senai.Wishlist.Desafio.Repositories
             }
         }
 
+        public Usuarios BuscarUsuarioPorId(int id)
+        {
+            using (WishlistContext ctx = new WishlistContext())
+            {
+                return ctx.Usuarios.Find(id);
+            }
+        }
+
         public void CadastrarUsuario(Usuarios usuario)
         {
             using (WishlistContext ctx = new WishlistContext())

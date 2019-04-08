@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Wishlist.Desafio.Domains;
+using Senai.Wishlist.Desafio.Enums;
 using Senai.Wishlist.Desafio.Interfaces;
 using Senai.Wishlist.Desafio.Repositories;
 
@@ -17,19 +18,23 @@ namespace Senai.Wishlist.Desafio.Controllers
     public class UsuariosController : ControllerBase
     {
         private IUsuarioRepository UsuarioRepository { get; set; }
+        public EmailController Email { get; set; }
 
         public UsuariosController()
         {
             UsuarioRepository = new UsuarioRepository();
+            Email = new EmailController();
         }
 
         [HttpPost]
-        [Authorize]
         public IActionResult CadastrarUsuario(Usuarios usuario)
         {
             try
             {
                 UsuarioRepository.CadastrarUsuario(usuario);
+
+                Email.Enviar(usuario, ETiposEmail.AoCadastrarUsuario);
+
                 return Ok();
             }
             catch (Exception ex)

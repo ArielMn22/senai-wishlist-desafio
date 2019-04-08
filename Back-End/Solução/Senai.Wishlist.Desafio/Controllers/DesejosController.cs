@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Senai.Wishlist.Desafio.Domains;
+using Senai.Wishlist.Desafio.Enums;
 using Senai.Wishlist.Desafio.Interfaces;
 using Senai.Wishlist.Desafio.Repositories;
 
@@ -17,10 +19,14 @@ namespace Senai.Wishlist.Desafio.Controllers
     public class DesejosController : ControllerBase
     {
         private IDesejoRepository DesejoRepository { get; set; }
+        private IUsuarioRepository UsuarioRepository { get; set; }
+        private EmailController Email { get; set; }
 
         public DesejosController()
         {
             DesejoRepository = new DesejoRepository();
+            UsuarioRepository = new UsuarioRepository();
+            Email = new EmailController();
         }
 
         [HttpGet]
@@ -80,8 +86,15 @@ namespace Senai.Wishlist.Desafio.Controllers
         {
             try
             {
+                int usuarioId = Convert.ToInt32(HttpContext.User.Claims.First(c => c.Type == JwtRegisteredClaimNames.Jti).Value);
+
+                desejo.IdUsuario = usuarioId; // Adicionando o usuário que cadastrou o desejo.
+                desejo.DataCriacao = DateTime.Now; // Adionando a data de criação do desejo.
+
                 DesejoRepository.CadastrarDesejo(desejo);
 
+                Email.Enviar(UsuarioRepository.BuscarUsuarioPorId(usuarioId), ETiposEmail.AoCadastrarDesejo);
+                
                 return Ok();
             }
             catch (Exception ex)

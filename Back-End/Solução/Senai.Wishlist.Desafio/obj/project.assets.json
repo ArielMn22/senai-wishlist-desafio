@@ -3121,6 +3121,19 @@
           }
         }
       },
+      "Sendgrid/9.10.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Abstractions": "1.1.2",
+          "Newtonsoft.Json": "9.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/SendGrid.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/SendGrid.dll": {}
+        }
+      },
       "Swashbuckle.AspNetCore/4.0.1": {
         "type": "package",
         "dependencies": {
@@ -8456,6 +8469,26 @@
         "version.txt"
       ]
     },
+    "Sendgrid/9.10.0": {
+      "sha512": "G8CYo0oPP/on1D3QNfU27GMLCEUIii8/nGTLGnbmrddrRaRShdxpCHWZhxr02cwZDwAsx0WBCi+IjbJ+DpQo0A==",
+      "type": "package",
+      "path": "sendgrid/9.10.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net452/SendGrid.dll",
+        "lib/net452/SendGrid.pdb",
+        "lib/net452/SendGrid.xml",
+        "lib/netstandard1.3/SendGrid.dll",
+        "lib/netstandard1.3/SendGrid.pdb",
+        "lib/netstandard1.3/SendGrid.xml",
+        "lib/netstandard2.0/SendGrid.dll",
+        "lib/netstandard2.0/SendGrid.pdb",
+        "lib/netstandard2.0/SendGrid.xml",
+        "sendgrid.9.10.0.nupkg.sha512",
+        "sendgrid.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/4.0.1": {
       "sha512": "Zq6lkFieuFPNDwXwQ+e8i5zy2VMrexcRFU8mQORxqIc8r7Y+qKX63vg57yL1HeGCINHQGGzxGfw2rP63IeEqhg==",
       "type": "package",
@@ -13049,6 +13082,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 2.2.3",
       "Microsoft.NETCore.App >= 2.2.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.2.0",
+      "Sendgrid >= 9.10.0",
       "Swashbuckle.AspNetCore >= 4.0.1",
       "Swashbuckle.AspNetCore.Swagger >= 4.0.1"
     ]
@@ -13060,11 +13094,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Ariel\\Code-Repositories\\GitHub\\senai-wishlist-desafio\\Back-End\\Senai.Wishlist.Desafio\\Senai.Wishlist.Desafio\\Senai.Wishlist.Desafio.csproj",
+      "projectUniqueName": "D:\\Ariel\\Code-Repositories\\GitHub\\senai-wishlist-desafio\\Back-End\\Solução\\Senai.Wishlist.Desafio\\Senai.Wishlist.Desafio.csproj",
       "projectName": "Senai.Wishlist.Desafio",
-      "projectPath": "D:\\Ariel\\Code-Repositories\\GitHub\\senai-wishlist-desafio\\Back-End\\Senai.Wishlist.Desafio\\Senai.Wishlist.Desafio\\Senai.Wishlist.Desafio.csproj",
+      "projectPath": "D:\\Ariel\\Code-Repositories\\GitHub\\senai-wishlist-desafio\\Back-End\\Solução\\Senai.Wishlist.Desafio\\Senai.Wishlist.Desafio.csproj",
       "packagesPath": "C:\\Users\\Ariel\\.nuget\\packages\\",
-      "outputPath": "D:\\Ariel\\Code-Repositories\\GitHub\\senai-wishlist-desafio\\Back-End\\Senai.Wishlist.Desafio\\Senai.Wishlist.Desafio\\obj\\",
+      "outputPath": "D:\\Ariel\\Code-Repositories\\GitHub\\senai-wishlist-desafio\\Back-End\\Solução\\Senai.Wishlist.Desafio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -13123,6 +13157,10 @@
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
             "target": "Package",
             "version": "[2.2.0, )"
+          },
+          "Sendgrid": {
+            "target": "Package",
+            "version": "[9.10.0, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
