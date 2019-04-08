@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Senai.Wishlist.Desafio.Domains;
 using Senai.Wishlist.Desafio.Interfaces;
+using Senai.Wishlist.Desafio.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,37 +55,61 @@ namespace Senai.Wishlist.Desafio.Repositories
             }
         }
 
-        public List<Desejos> ListarDesejosPorNomeUsuario(string usuarioNome)
+        public List<DesejosViewModel> ListarDesejosPorNomeUsuario(string usuarioNome)
         {
             using (WishlistContext ctx = new WishlistContext())
             {
-                return ctx.Desejos
-                    .Where(x => x.IdUsuarioNavigation.Nome == usuarioNome)
-                    .Include(x => x.IdVerboNavigation)
-                    .ToList();
+                return TranformarEmDesejosViewModel(ctx.Desejos
+                                                    .Where(x => x.IdUsuarioNavigation.Nome == usuarioNome)
+                                                    .Include(x => x.IdVerboNavigation)
+                                                    .Include(x => x.IdUsuarioNavigation)
+                                                    .ToList());
             }
         }
 
-        public List<Desejos> ListarDesejosPorVerbo(string verboNome)
+        public List<DesejosViewModel> ListarDesejosPorVerbo(string verboNome)
         {
             using (WishlistContext ctx = new WishlistContext())
             {
-                return ctx.Desejos
-                    .Where(x => x.IdVerboNavigation.Nome == verboNome)
-                    .Include(x => x.IdUsuarioNavigation)
-                    .ToList();
+                return TranformarEmDesejosViewModel(ctx.Desejos
+                                                    .Where(x => x.IdVerboNavigation.Nome == verboNome)
+                                                    .Include(x => x.IdUsuarioNavigation)
+                                                    .ToList());
             }
         }
 
-        public List<Desejos> ListarTodosDesejos()
+        public List<DesejosViewModel> ListarTodosDesejos()
         {
             using (WishlistContext ctx = new WishlistContext())
             {
-                return ctx.Desejos
-                    .Include(x => x.IdUsuarioNavigation)
-                    .Include(x => x.IdVerboNavigation)
-                    .ToList();
+                return TranformarEmDesejosViewModel(ctx.Desejos
+                                                    .Include(x => x.IdUsuarioNavigation)
+                                                    .Include(x => x.IdVerboNavigation)
+                                                    .ToList());
             }
+        }
+
+        public List<DesejosViewModel> TranformarEmDesejosViewModel(List<Desejos> desejos)
+        {
+            List<DesejosViewModel> desejosViewModel = new List<DesejosViewModel>();
+
+            foreach (Desejos desejo in desejos)
+            {
+                DesejosViewModel desejoViewModel = new DesejosViewModel
+                {
+                    Id = desejo.Id,
+                    IdVerbo = desejo.IdVerbo,
+                    Descricao = desejo.Descricao,
+                    DataCriacao = desejo.DataCriacao,
+                    IdUsuario = desejo.IdUsuario,
+                    UsuarioNome = desejo.IdUsuarioNavigation.Nome,
+                    VerboNome = desejo.IdVerboNavigation.Nome
+                };
+
+                desejosViewModel.Add(desejoViewModel);
+            }
+
+            return desejosViewModel;
         }
     }
 }
