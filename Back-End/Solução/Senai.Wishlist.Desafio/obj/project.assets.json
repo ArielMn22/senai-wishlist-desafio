@@ -12678,23 +12678,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\52742298835\\.nuget\\packages\\": {},
+    "C:\\Users\\33747821839\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\52742298835\\Desktop\\Senai-wish-List\\senai-wishlist-desafio\\Back-End\\Solução\\Senai.Wishlist.Desafio\\Senai.Wishlist.Desafio.csproj",
+      "projectUniqueName": "C:\\Users\\33747821839\\Documents\\Ariel\\senai-wishlist-desafio\\Back-End\\Solução\\Senai.Wishlist.Desafio\\Senai.Wishlist.Desafio.csproj",
       "projectName": "Senai.Wishlist.Desafio",
-      "projectPath": "C:\\Users\\52742298835\\Desktop\\Senai-wish-List\\senai-wishlist-desafio\\Back-End\\Solução\\Senai.Wishlist.Desafio\\Senai.Wishlist.Desafio.csproj",
-      "packagesPath": "C:\\Users\\52742298835\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\52742298835\\Desktop\\Senai-wish-List\\senai-wishlist-desafio\\Back-End\\Solução\\Senai.Wishlist.Desafio\\obj\\",
+      "projectPath": "C:\\Users\\33747821839\\Documents\\Ariel\\senai-wishlist-desafio\\Back-End\\Solução\\Senai.Wishlist.Desafio\\Senai.Wishlist.Desafio.csproj",
+      "packagesPath": "C:\\Users\\33747821839\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\33747821839\\Documents\\Ariel\\senai-wishlist-desafio\\Back-End\\Solução\\Senai.Wishlist.Desafio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\52742298835\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\33747821839\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
