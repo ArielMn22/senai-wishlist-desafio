@@ -5,6 +5,35 @@ import '../../assets/css/login.css'
 import '../../assets/css/desejos.css'
 
 export default class TodosDesejos extends Component {
+    constructor () {
+        super();
+
+        this.state = {
+            lista: [],
+            id: "",
+            descricao: "",
+            dataCriacao: "",
+            categoria: "",
+            autor: ""
+        };
+    }
+
+    buscarMinhasConsultas() {
+        // Axios.get('http://localhost:5000/api/desejos/' + localStorage.getItem("usuarioNome"))
+        Axios.get('http://192.168.3.143:5000/api/desejos/')
+        .then(data => {
+            console.log(data);
+            this.setState({ lista : data.data});
+            // carregarTabela(data);
+        })
+        // .catch(erro => console.log(erro))
+    }
+
+    componentDidMount()
+    {
+        this.buscarMinhasConsultas();
+    }
+    
     render () {
         return(
             <div>
@@ -32,7 +61,7 @@ export default class TodosDesejos extends Component {
                     </form>
                 </section>
                 <section id="tabelaDesejos" class="pa-all-g">
-                    <!-- <div class="tabelaContent"> -->
+                    {/* <!-- <div class="tabelaContent"> --> */}
                     <h2>Todos os desejos</h2>
                     <table class="ma-top-g">
                         <tr id="head">
@@ -49,36 +78,8 @@ export default class TodosDesejos extends Component {
                             <td>Comprar</td>
                             <td>Ariel</td>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Comprar PC da NASA</td>
-                            <td>12/2/2002</td>
-                            <td>Comprar</td>
-                            <td>Ariel</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Comprar PC da NASA</td>
-                            <td>12/2/2002</td>
-                            <td>Comprar</td>
-                            <td>Ariel</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Comprar PC da NASA</td>
-                            <td>12/2/2002</td>
-                            <td>Comprar</td>
-                            <td>Ariel</td>
-                        </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Comprar PC da NASA</td>
-                            <td>12/2/2002</td>
-                            <td>Comprar</td>
-                            <td>Ariel</td>
-                        </tr>
                     </table>
-                    <!-- </div> -->
+                    {/* <!-- </div> --> */}
                 </section>
             </main>
             </div>
