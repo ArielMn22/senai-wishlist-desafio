@@ -3,7 +3,7 @@ import Login from '../CadastroDesejo/CadastrarDesejo';
 
 function CabecalhoLogado() {
     return (
-        <section classNme="header">
+        <section class="header">
             <h1>WishList</h1>
             <ul>
                 <li><a href="">Meus desejos</a></li>
