@@ -1,16 +1,16 @@
-import React,{Component} from 'react';
+import React, { Component } from 'react';
 import Login from '../Login/login';
-function Cabecalho(){
-    return(
+function Cabecalho() {
+    return (
         <section class="header">
-        <h1>WISHLIST</h1>
-       
+            <h1>WISHLIST</h1>
+
             <ul>
                 <li><a >Cadastrar</a></li>
                 <li><a>Logar</a></li>
             </ul>
-       
-    </section>
+
+        </section>
     );
 }
 export default Cabecalho;

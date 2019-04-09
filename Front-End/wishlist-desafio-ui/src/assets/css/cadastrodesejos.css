@@ -1,0 +1,49 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: berlin sans fb;
+}
+
+.header h1{
+    text-transform: uppercase;
+}
+
+.header li{
+    left: 75%;
+}
+
+.usuario h3{
+    margin: 10vh 0 10vh 10vh;
+    font-size: 23px;
+    font-weight: 300;
+}
+
+.cadastro{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.cadastro h2{
+    font-size: 30px;
+    padding: 0 24vw 4vh 0; 
+}
+
+.cadastro textarea{
+    resize: none;
+    width: 40vw;
+    background-color: #D3D3D3;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-add{
+    background-color: orange;
+    border-radius: 12px;
+    border: 0;
+    padding: 15px 20px;
+    font-weight: bold;
+    font-size: 17px;
+    margin: 5vh 0 0 32vw;
+}
