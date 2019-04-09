@@ -135,6 +135,20 @@ h2 {
     font-family: berlin sans fb;
 }
 
+.btn-new {
+    /* left: 40%;
+    position: relative;
+    top: 100px; */
+    box-shadow: 0;
+    width: 90px;
+    background: #ffa64d;
+    height: 27px;
+    color: black;
+    border-radius: 8px;
+    border: none;
+    font-size: 1.2rem;
+    font-family: berlin sans fb;
+}
 /*  */
 
 .btn2{

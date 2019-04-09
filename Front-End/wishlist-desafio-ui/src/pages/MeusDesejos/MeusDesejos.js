@@ -11,11 +11,6 @@ export default class MeusDesejos extends Component {
 
         this.state = {
             lista: [],
-            id: "",
-            descricao: "",
-            dataCriacao: "",
-            categoria: "",
-            autor: ""
         };
     }
 

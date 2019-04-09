@@ -10,11 +10,7 @@ export default class TodosDesejos extends Component {
 
         this.state = {
             lista: [],
-            id: "",
-            descricao: "",
-            dataCriacao: "",
-            categoria: "",
-            autor: ""
+            nomeUsuario: ""
         };
     }
 
@@ -29,11 +25,20 @@ export default class TodosDesejos extends Component {
         // .catch(erro => console.log(erro))
     }
 
+    buscarPorNomeUsuario(){
+        Axios.get('http://192.168.3.143:5000/api/desejos/')
+        .then(data => {
+            console.log(data);
+            this.setState({ lista : data.data});
+            // carregarTabela(data);
+        })
+    }
+
     componentDidMount()
     {
         this.buscarMinhasConsultas();
     }
-    
+
     render () {
         return(
             <div>
@@ -71,13 +76,17 @@ export default class TodosDesejos extends Component {
                             <th>Categoria</th>
                             <th>Autor</th>
                         </tr>
-                        <tr>
-                            <td>1</td>
-                            <td>Comprar PC da NASA</td>
-                            <td>12/2/2002</td>
-                            <td>Comprar</td>
-                            <td>Ariel</td>
-                        </tr>
+                        {this.state.lista.map(function(desejo) {
+                            return(
+                                <tr>
+                                    <td>{desejo.id}</td>
+                                    <td>{desejo.descricao}</td>
+                                    <td>{desejo.dataCriacao}</td>
+                                    <td>{desejo.verboNome}</td>
+                                    <td>{desejo.usuarioNome}</td>
+                                </tr>
+                            );
+                        })}
                     </table>
                     {/* <!-- </div> --> */}
                 </section>
