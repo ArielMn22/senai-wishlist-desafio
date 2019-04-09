@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import Cabecalho from '../Components/Cabecalho'
+import Cabecalho from '../Components/Cabecalho';
 import '../../assets/css/login.css'
 import Axios from 'axios';
 class Login extends Component{

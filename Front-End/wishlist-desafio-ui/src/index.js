@@ -7,6 +7,7 @@ import Login from './pages/Login/login';
 import * as serviceWorker from './serviceWorker';
 import {Route, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
 import CadastrarUsuario from './pages/CadastrarUsuario/CadastrarUsuario';
+import CadastrarDesejo from './pages/MeusDesejos/CadastrarDesejo'
 
 
 const rotas = (
@@ -16,7 +17,7 @@ const rotas = (
                 <Route exact path="/" component={App}></Route>
                 <Route exact path="/login" component={Login}></Route>
                 <Route exact path="/cadastrarusuario" component={CadastrarUsuario}></Route>
-                {/* <Route exact path="/cadastrardesejo" component={CadastrarDesejo}></Route> */}
+                <Route exact path="/cadastrardesejo" component={CadastrarDesejo}></Route>
                 <Route exact path="/meusdesejos" component={MeusDesejos}></Route>
                 {/* <Route exact path="/desejos" component={Desejos}></Route> */}
                 {/* <Route component={NaoEncontrada}></Route> */}
