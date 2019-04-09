@@ -12,11 +12,13 @@ class CadastrarUsuario extends Component{
             email:"",
             senha:""    
         }
-        
+        this.atualizaEstadoSenhaForm =this.atualizaEstadoSenha.bind(this)
+        this.atualizaEstadoNomeForm = this.atualizaEstadoNome.bind(this)
+        this.atualizaEstadoEmailForm = this.atualizaEstadoEmail.bind(this)
     }
     Cadastrar(event){
         event.preventDefault();
-        Axios.post('',{
+        Axios.post('http://192.168.3.143:5000/api/usuarios',{
             nome:this.state.nome,
             email:this.state.email,
             senha: this.state.senha
@@ -24,8 +26,14 @@ class CadastrarUsuario extends Component{
         .then(data=>console.log(data))
         .catch(erro=>console.log(erro))
     }
-    atualizaEstadoNome(){
-        this.setState({nome:this.state.nome})
+    atualizaEstadoNome(event){
+        this.setState({nome:event.target.value})
+    }
+    atualizaEstadoEmail(event){
+        this.setState({email:event.target.value})
+    }
+    atualizaEstadoSenha(event){
+        this.setState({senha:event.target.value})
     }
     render(){
         return(
@@ -35,15 +43,15 @@ class CadastrarUsuario extends Component{
                 <h2>Cadastro</h2>
                 <form onSubmit={this.Cadastrar.bind(this)}>
                     <div className="item">
-                       <a>Nome :</a> <input className="nome" type="text" value={this.state.nome} onChange={this.atualizaEstadoNome.bind(this)}
+                       <a>Nome :</a> <input className="nome" type="text"  value={this.state.nome} onChange={this.atualizaEstadoNomeForm}
                        name="nome" 
-                       />
+                       />   
                     </div>
                 <div className="item">
-                        <a>Email :</a><input  className="email" type="text" value={this.state.email} name="email" />
+                        <a>Email :</a><input  className="email" type="text" value={this.state.email} onChange={this.atualizaEstadoEmailForm} name="email" />
                 </div>
                     <div className="item">
-                            <a>Senha :</a><input  className="senha" type="password" value={this.state.senha} name="senha"/>
+                            <a>Senha :</a><input  className="senha" type="password" value={this.state.senha} onChange={this.atualizaEstadoSenhaForm} name="senha"/>
                     </div>
                     <button type="submit" className="btn2">CADASTRAR</button>
                 </form>
