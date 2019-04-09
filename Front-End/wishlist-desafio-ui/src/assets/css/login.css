@@ -168,6 +168,24 @@ h2 {
 .btn:hover,.btn2:hover{
     background: #fd7f01;
 }
+/*Rodape*/
+.footer{
+    top: 400px;
+    width: 100%;
+    height: 80px;
+    background: rgb(240, 240, 240);
+    text-align: center; 
+    transform: translateY(620px);
+
+}
+.footer p{
+    color: rgb(0, 0, 0);
+    top: 30px;
+    font-style: italic;
+    font-weight: lighter;
+    position: relative;
+    font-family: segoe ui;
+}
 
 /* Paddings */
 

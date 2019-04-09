@@ -2,6 +2,7 @@ import React,{Component} from 'react';
 import '../../assets/css/login.css';
 import Cabecalho from '../Components/Cabecalho'
 import Axios from 'axios';
+import Rodape from '../Components/Rodape';
 
 class CadastrarUsuario extends Component{
     constructor(){
@@ -55,8 +56,11 @@ class CadastrarUsuario extends Component{
                     </div>
                     <button type="submit" className="btn2">CADASTRAR</button>
                 </form>
+            
             </section>
+            <Rodape />
             </div>
+            
         );
     }
 }
