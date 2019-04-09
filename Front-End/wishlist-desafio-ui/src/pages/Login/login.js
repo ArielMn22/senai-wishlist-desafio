@@ -1,11 +1,12 @@
 import React,{Component} from 'react';
 import Cabecalho from '../Components/Cabecalho'
-
+import '../../assets/css/login.css'
+import Axios from 'axios';
 class Login extends Component{
     render(){
         return(
     <div>        
-    <Cabecalho/>
+    <Cabecalho />
     <section className="campoLogar">
         <h2>Login</h2>
         <form>
