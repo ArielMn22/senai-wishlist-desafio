@@ -51,6 +51,16 @@ namespace Senai.Wishlist.Desafio
                     };
                 });
 
+            //Em breve
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials());
+            });
+            
             // Register the Swagger generator, defining 1 or more Swagger documents
             services.AddSwaggerGen(c =>
             {
@@ -78,6 +88,9 @@ namespace Senai.Wishlist.Desafio
             });
 
             app.UseAuthentication();
+
+            //Em breve
+            app.UseCors(builder => builder.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
 
             app.UseMvc();
         }
