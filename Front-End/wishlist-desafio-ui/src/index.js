@@ -8,6 +8,7 @@ import * as serviceWorker from './serviceWorker';
 import {Route, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
 import CadastrarUsuario from './pages/CadastrarUsuario/CadastrarUsuario';
 import CadastrarDesejo from './pages/MeusDesejos/CadastrarDesejo'
+import TodosDesejos from './pages/TodosDesejos/TodosDesejos';
 
 
 const rotas = (
@@ -19,6 +20,7 @@ const rotas = (
                 <Route exact path="/cadastrarusuario" component={CadastrarUsuario}></Route>
                 <Route exact path="/cadastrardesejo" component={CadastrarDesejo}></Route>
                 <Route exact path="/meusdesejos" component={MeusDesejos}></Route>
+                <Route exact path="/todosdesejos" component={TodosDesejos}></Route>
                 {/* <Route exact path="/desejos" component={Desejos}></Route> */}
                 {/* <Route component={NaoEncontrada}></Route> */}
             </Switch>
