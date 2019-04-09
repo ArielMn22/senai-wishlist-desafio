@@ -13,4 +13,8 @@ function Cabecalho(){
     </section>
     );
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 947f542c8494be6b85bf236983cbdde3a7bd91bb
 export default Cabecalho;
