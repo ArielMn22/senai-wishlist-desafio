@@ -13,3 +13,5 @@ function Cabecalho(){
     </section>
     );
 }
+
+export default Cabecalho;
