@@ -1,0 +1,62 @@
+main {
+    display: flex;
+
+}
+
+#filterUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 310px;
+    width: 30%;
+}
+
+#formUser {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#formUser > * {
+    margin: 20px 0;
+}
+
+#tabelaDesejos {
+    width: 100%;
+    height: calc(100vh - 53px);
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+#tabelaDesejos table {
+    border-spacing: 0;
+    border: 1px solid black;
+    border-radius: 20px;
+}
+
+#tabelaDesejos table th, #tabelaDesejos table td {
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+}
+
+#tabelaDesejos table th {
+    font-weight: 300;
+    font-size: 1.2rem;
+}
+
+#tabelaDesejos table tr:nth-child(even) {
+    background-color: #ccc;
+}
+
+#tabelaDesejos table tr:not(#head):hover {
+    background-color: rgb(136, 136, 136);
+}
+
+#categoriasSelect {
+    font-size: 1.2rem;
+    border-radius: 10px;
+}
