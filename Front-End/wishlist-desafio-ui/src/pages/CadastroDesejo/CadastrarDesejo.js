@@ -17,6 +17,7 @@ class CadastrarDesejo extends Component {
 
     Cadastrar(event) {
         event.preventDefault();
+        console.log('candida');
         Axios.post('http://192.168.3.143:5000/api/desejos', {
             descricao: this.state.descricao
         })
