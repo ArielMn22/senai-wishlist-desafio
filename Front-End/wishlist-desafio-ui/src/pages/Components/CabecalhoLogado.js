@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Login from '../MeusDesejos/CadastrarDesejos';
+import Login from '../MeusDesejos/CadastrarDesejo';
 
 function CabecalhoLogado() {
     return (
