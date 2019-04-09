@@ -5,13 +5,6 @@
     font-family: berlin sans fb;
 }
 
-.header h1{
-    text-transform: uppercase;
-}
-
-.header li{
-    left: 75%;
-}
 
 .usuario h3{
     margin: 10vh 0 10vh 10vh;
