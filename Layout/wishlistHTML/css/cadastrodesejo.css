@@ -9,9 +9,14 @@
     text-transform: uppercase;
 }
 
+.header li{
+    left: 75%;
+}
+
 .usuario h3{
-    margin: 5vh;
+    margin: 10vh 0 10vh 10vh;
     font-size: 23px;
+    font-weight: 300;
 }
 
 .cadastro{
@@ -22,7 +27,7 @@
 
 .cadastro h2{
     font-size: 30px;
-    padding: 0 21vw 3vh 0 
+    padding: 0 24vw 4vh 0; 
 }
 
 .cadastro textarea{
@@ -40,5 +45,5 @@
     padding: 15px 20px;
     font-weight: bold;
     font-size: 17px;
-    margin: 3vh 0 0 31vw;
+    margin: 5vh 0 0 32vw;
 }
