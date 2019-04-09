@@ -34,7 +34,7 @@ class CadastrarDesejo extends Component {
                     </div>
                     <div className="cadastro">
                         <h2>Cadastre seu desejo:</h2>
-                        <form action="">
+                        <form onSubmit={this.Cadastrar.bind(this)}>
                             <textarea name="" id="" cols="30" rows="10" type='text' value={this.state.descricao} name="descricao"></textarea>
                             <br />
                             <button type="submit" className="btn-add">Adicionar</button>

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import Login from '../MeusDesejos/CadastrarDesejo';
+import Login from '../CadastroDesejo/CadastrarDesejo';
 
 function CabecalhoLogado() {
     return (
-        <section class="header">
+        <section classNme="header">
             <h1>WishList</h1>
             <ul>
                 <li><a href="">Meus desejos</a></li>
