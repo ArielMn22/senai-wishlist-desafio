@@ -24,8 +24,11 @@ export default class TodosDesejos extends Component {
         .then(data => {
             console.log(data);
             this.setState({ lista : data.data});
+            this.setState({ listaFiltrada : data.data});
             // carregarTabela(data);
         })
+
+        // this.setState({listaFiltrada : this.state.lista});
 
         // .catch(erro => console.log(erro))
     }
@@ -40,7 +43,7 @@ export default class TodosDesejos extends Component {
 
         this.setState({ listaFiltrada : _listaFiltrada });
 
-        this.buscarMinhasConsultas(this.state.listaFiltrada);
+        // this.buscarMinhasConsultas(this.state.listaFiltrada);
         // console.log(this.state.nomeUsuario);
         // Axios.get("http://192.168.3.143:5000/api/desejos/" + this.state.nomeUsuario)
         // .then(data => {
