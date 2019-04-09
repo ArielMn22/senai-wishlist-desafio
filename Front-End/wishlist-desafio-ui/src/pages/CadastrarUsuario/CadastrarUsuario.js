@@ -12,6 +12,7 @@ class CadastrarUsuario extends Component{
             email:"",
             senha:""    
         }
+        
     }
     Cadastrar(event){
         event.preventDefault();
@@ -23,6 +24,9 @@ class CadastrarUsuario extends Component{
         .then(data=>console.log(data))
         .catch(erro=>console.log(erro))
     }
+    atualizaEstadoNome(){
+        this.setState({nome:this.state.nome})
+    }
     render(){
         return(
             <div>
@@ -31,8 +35,8 @@ class CadastrarUsuario extends Component{
                 <h2>Cadastro</h2>
                 <form onSubmit={this.Cadastrar.bind(this)}>
                     <div className="item">
-                       <a>Nome :</a> <input className="nome" type="text" value={this.state.nome}
-                       name="nome"
+                       <a>Nome :</a> <input className="nome" type="text" value={this.state.nome} onChange={this.atualizaEstadoNome.bind(this)}
+                       name="nome" 
                        />
                     </div>
                 <div className="item">
