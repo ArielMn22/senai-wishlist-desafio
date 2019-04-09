@@ -7,7 +7,7 @@ import Login from './pages/Login/login';
 import * as serviceWorker from './serviceWorker';
 import {Route, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom';
 import CadastrarUsuario from './pages/CadastrarUsuario/CadastrarUsuario';
-import CadastrarDesejo from './pages/MeusDesejos/CadastrarDesejo'
+import CadastrarDesejo from './pages/CadastroDesejo/CadastrarDesejo'
 import TodosDesejos from './pages/TodosDesejos/TodosDesejos';
 
 

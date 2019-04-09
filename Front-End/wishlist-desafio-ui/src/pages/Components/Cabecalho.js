@@ -6,7 +6,7 @@ function Cabecalho() {
             <h1>WISHLIST</h1>
 
             <ul>
-                <li><a >Cadastrar</a></li>
+                <li><a link="/login">Cadastrar</a></li>
                 <li><a>Logar</a></li>
             </ul>
 
