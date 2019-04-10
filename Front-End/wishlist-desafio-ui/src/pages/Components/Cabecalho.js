@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import Login from '../Login/login';
+import React from 'react';
+// import Login from '../Login/login';
 function Cabecalho() {
     return (
-        <section class="header">
+        <section className="header">
             <h1>WISHLIST</h1>
 
             <ul>

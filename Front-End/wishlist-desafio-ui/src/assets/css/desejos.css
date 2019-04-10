@@ -52,6 +52,10 @@ main {
     background-color: #ccc;
 }
 
+/* #tabelaDesejos table tr:nth-last-child(1n) > * {
+    border-radius: 20px;
+} */
+
 #tabelaDesejos table tr:not(#head):hover {
     background-color: rgb(136, 136, 136);
 }

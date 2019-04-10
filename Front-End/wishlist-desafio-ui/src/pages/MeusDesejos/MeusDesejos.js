@@ -11,23 +11,70 @@ export default class MeusDesejos extends Component {
 
         this.state = {
             lista: [],
+            listaFiltrada: [],
+            usuarioNome: "",
+            listaVerbos: [],
+            categoriaFiltrada: ""
         };
+    }
+    
+    buscarCategoriasSelect()
+    {
+        Axios.get("http://localhost:5000/api/verbos")
+        .then(data => {
+            console.log(data);
+            this.setState({ listaVerbos : data.data });
+        })
+        .catch(erro => console.log(erro))
     }
 
     buscarMinhasConsultas() {
-        // Axios.get('http://localhost:5000/api/desejos/' + localStorage.getItem("usuarioNome"))
-        Axios.get('http://192.168.3.143:5000/api/desejos/')
+        let jwtDecode = require('jwt-decode'); // Importando o jwt-decode
+
+        let decode = jwtDecode(localStorage.getItem("wishlist-usuario"));
+        
+        let nomeUsuario = decode.nome;
+
+        this.setState({ usuarioNome : nomeUsuario });
+
+        console.log("NOME DO USUARIO LOGADO: " + nomeUsuario);
+        console.log("NOME DO USUARIO LOGADO - this.state.usuarioNome: " + this.state.usuarioNome);
+        
+        console.log("Token decodificado: " + decode);
+        Axios.get("http://localhost:5000/api/desejos/usuario/" + nomeUsuario)
         .then(data => {
             console.log(data);
             this.setState({ lista : data.data});
-            // carregarTabela(data);
+            this.setState({ listaFiltrada : data.data});
         })
-        // .catch(erro => console.log(erro))
+        .catch(erro => console.log(erro))
+    }
+
+    filtrarPorVerbo(event){
+        event.preventDefault();
+
+        let categoria = this.state.categoriaFiltrada;
+        let _listaFiltrada = [];
+
+        if (categoria == "" || categoria == null || categoria == "Sem filtro")
+        {
+            _listaFiltrada = this.state.lista;
+        } else {
+            _listaFiltrada = this.state.lista.filter(x => x.verboNome == categoria);
+        }
+
+        this.setState({ listaFiltrada : _listaFiltrada });
     }
 
     componentDidMount()
     {
         this.buscarMinhasConsultas();
+        this.buscarCategoriasSelect();
+    }
+
+    atualizaVerboListar(event)
+    {
+        this.setState({ categoriaFiltrada : event.target.value })
     }
 
     render(){
@@ -37,17 +84,26 @@ export default class MeusDesejos extends Component {
                 <main>
                     <section id="filterUser" className="pa-all-g">
                         <h2>Filtrar por Categoria</h2>
-                        <form action="" id="formUser">
-                            <select name="categorias" id="categoriasSelect">
-                                <option value="comprar">
-                                    Comprar
-                                </option>
-                                <option value="comprar">
-                                    Viajar
-                                </option>
-                            </select>
-                            <label for="">
-                                <input className="btn-new" value="Filtrar" type="submit" id="submitBtn" name="submit" />
+                        <form onSubmit={this.filtrarPorVerbo.bind(this)} action="" id="formUser">
+                            <label>
+                                <select value={this.state.categoriaFiltrada} onChange={this.atualizaVerboListar.bind(this)} name="categoria" id="categoriasSelect">
+                                <option value="Sem filtro">Sem filtro</option>
+                                    {this.state.listaVerbos.map(function (categoria) {
+                                        return (
+                                            <option key={categoria.id} value={categoria.nome}>{categoria.nome}</option>
+                                        );
+                                    })}
+                                    {/* <option value="comprar">
+                                        Comprar
+                                    </option>
+                                    <option value="comprar">
+                                        Viajar
+                                    </option> */}
+                                </select>
+                            </label>
+                            <label htmlFor="">
+                            <button className="btn-new" type="submit" id="submitBtn" name="submit">Filtrar</button>
+                                {/* <input className="btn-new" value="Filtrar" type="submit" id="submitBtn" name="submit" /> */}
                             </label>
                         </form>
                     </section>
@@ -55,6 +111,8 @@ export default class MeusDesejos extends Component {
                         {/* <!-- <div className="tabelaContent"> --> */}
                         <h2>Meus Desejos</h2>
                         <table className="ma-top-g">
+                        <thead>
+
                             <tr id="head">
                                 <th>#</th>
                                 <th>Descrição</th>
@@ -62,9 +120,11 @@ export default class MeusDesejos extends Component {
                                 <th>Categoria</th>
                                 <th>Autor</th>
                             </tr>
-                            {this.state.lista.map(function (desejo) {
+                        </thead>
+                        <tbody>
+                            {this.state.listaFiltrada.map(function (desejo) {
                                 return(
-                                    <tr>
+                                    <tr key={desejo.id}>
                                         <td>{desejo.id}</td>
                                         <td>{desejo.descricao}</td>
                                         <td>{desejo.dataCriacao}</td>
@@ -73,6 +133,7 @@ export default class MeusDesejos extends Component {
                                     </tr>
                                 );
                             })}
+                        </tbody>
                         </table>
                         {/* <!-- </div> --> */}
                     </section>

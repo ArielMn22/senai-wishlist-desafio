@@ -20,7 +20,7 @@ export default class TodosDesejos extends Component {
 
     buscarMinhasConsultas() {
         // Axios.get('http://localhost:5000/api/desejos/' + localStorage.getItem("usuarioNome"))
-        Axios.get('http://192.168.3.143:5000/api/desejos/')
+        Axios.get('http://localhost:5000/api/desejos/')
         .then(data => {
             console.log(data);
             this.setState({ lista : data.data});
@@ -37,20 +37,17 @@ export default class TodosDesejos extends Component {
         event.preventDefault();
     
         let nome = this.state.nomeUsuario;
-        let _listaFiltrada = this.state.lista.filter(x => x.usuarioNome == nome);
+        let _listaFiltrada = [];
 
+        if (nome == "" || nome == null)
+        {
+            _listaFiltrada = this.state.lista;
+        } else {
+            _listaFiltrada = this.state.lista.filter(x => x.usuarioNome == nome);
+        }
+        
         console.log(_listaFiltrada);
-
         this.setState({ listaFiltrada : _listaFiltrada });
-
-        // this.buscarMinhasConsultas(this.state.listaFiltrada);
-        // console.log(this.state.nomeUsuario);
-        // Axios.get("http://192.168.3.143:5000/api/desejos/" + this.state.nomeUsuario)
-        // .then(data => {
-        //     console.log(data);
-        //     this.setState({ lista : data.data});
-        //     // carregarTabela(data);
-        // })
     }
 
     componentDidMount()
@@ -115,7 +112,7 @@ export default class TodosDesejos extends Component {
                         </tr>
                         {this.state.listaFiltrada.map(function(desejo) {
                             return(
-                                <tr>
+                                <tr key={desejo.id}>
                                     <td>{desejo.id}</td>
                                     <td>{desejo.descricao}</td>
                                     <td>{desejo.dataCriacao}</td>
