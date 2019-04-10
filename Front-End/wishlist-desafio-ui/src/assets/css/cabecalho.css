@@ -42,6 +42,6 @@
     transition: all .3s;
 }
 
-#menuSuperior ul li a:hover {
+#menuSuperior ul :hover {
     background-color: #ffa64d;
 }

@@ -58,6 +58,7 @@ class CadastrarDesejo extends Component {
         config)
             .then(data => console.log(data))
             .catch(erro => console.log(erro))
+        alert("cadastrado com sucesso");
     }
 
     atualizaEstadoDescricao(event){
