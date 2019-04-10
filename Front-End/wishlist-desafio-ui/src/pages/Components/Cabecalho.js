@@ -39,6 +39,7 @@ function Cabecalho() {
                 <li>
                     <Link to="/meusdesejos">Meus desejos</Link></li>
                     <li><Link to="/todosdesejos">Todos os Desejos</Link></li>
+                    <li><Link link="/cadastrardesejo">Cadastrar Desejo</Link></li>
                     <li><Link to="/sair">Sair</Link></li>
                 </ul>
             </nav>
