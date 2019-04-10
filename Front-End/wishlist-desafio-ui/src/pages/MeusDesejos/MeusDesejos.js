@@ -3,6 +3,7 @@ import Axios from 'axios';
 import Cabecalho from '../Components/Cabecalho'
 import '../../assets/css/login.css'
 import '../../assets/css/desejos.css'
+import Rodape from '../Components/Rodape';
 
 export default class MeusDesejos extends Component {
 
@@ -138,6 +139,7 @@ export default class MeusDesejos extends Component {
                         {/* <!-- </div> --> */}
                     </section>
                 </main>
+                <Rodape />
             </div>
         );
     }

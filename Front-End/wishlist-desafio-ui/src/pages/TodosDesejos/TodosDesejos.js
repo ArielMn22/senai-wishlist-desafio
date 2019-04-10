@@ -4,6 +4,7 @@ import Cabecalho from '../Components/Cabecalho'
 import '../../assets/css/login.css'
 import '../../assets/css/desejos.css'
 import { Z_FILTERED } from 'zlib';
+import Rodape from '../Components/Rodape';
 
 export default class TodosDesejos extends Component {
     constructor (props) {
@@ -115,6 +116,7 @@ export default class TodosDesejos extends Component {
                     {/* <!-- </div> --> */}
                 </section>
             </main>
+            <Rodape />
             </div>
         );
     }
