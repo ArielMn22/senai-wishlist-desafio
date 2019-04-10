@@ -11,6 +11,8 @@ import CadastrarDesejo from './pages/CadastroDesejo/CadastrarDesejo'
 import TodosDesejos from './pages/TodosDesejos/TodosDesejos';
 import NaoEncontrada from './pages/NaoEncontrada/NaoEncontrada';
 import { usuarioAutenticado } from './services/auth';
+import sair from './pages/Sair/sair';
+import Sair from './pages/Sair/sair';
 
 const Permissao = ({ component : Component }) => (
     <Route
@@ -27,6 +29,7 @@ const rotas = (
             <Switch>
                 <Route exact path="/" component={Login} />
                 <Route exact path="/login" component={Login} />
+                <Route exact path="/sair" component={Sair} />
                 <Route exact path="/cadastrarusuario" component={CadastrarUsuario} />
                 <Permissao exact path="/cadastrardesejo" component={CadastrarDesejo} />
                 <Permissao exact path="/meusdesejos" component={MeusDesejos} />
