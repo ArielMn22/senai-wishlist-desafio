@@ -9,6 +9,7 @@ import {Route, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom
 import CadastrarUsuario from './pages/CadastrarUsuario/CadastrarUsuario';
 import CadastrarDesejo from './pages/CadastroDesejo/CadastrarDesejo'
 import TodosDesejos from './pages/TodosDesejos/TodosDesejos';
+import NaoEncontrada from './pages/NaoEncontrada/NaoEncontrada';
 import { usuarioAutenticado } from './services/auth';
 
 const Permissao = ({ component : Component }) => (
@@ -31,7 +32,7 @@ const rotas = (
                 <Permissao exact path="/meusdesejos" component={MeusDesejos} />
                 <Permissao exact path="/todosdesejos" component={TodosDesejos} />
                 {/* <Route exact path="/desejos" component={Desejos} /> */}
-                {/* <Route component={NaoEncontrada} /> */}
+                <Route component={NaoEncontrada} />
             </Switch>
         </div>
     </Router>
