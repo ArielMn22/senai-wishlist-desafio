@@ -20,7 +20,7 @@ export default class MeusDesejos extends Component {
     
     buscarCategoriasSelect()
     {
-        Axios.get("http://localhost:5000/api/verbos")
+        Axios.get("http://192.168.3.143:5000/api/verbos")
         .then(data => {
             console.log(data);
             this.setState({ listaVerbos : data.data });
@@ -41,7 +41,7 @@ export default class MeusDesejos extends Component {
         console.log("NOME DO USUARIO LOGADO - this.state.usuarioNome: " + this.state.usuarioNome);
         
         console.log("Token decodificado: " + decode);
-        Axios.get("http://localhost:5000/api/desejos/usuario/" + nomeUsuario)
+        Axios.get("http://192.168.3.143:5000/api/desejos/usuario/" + nomeUsuario)
         .then(data => {
             console.log(data);
             this.setState({ lista : data.data});

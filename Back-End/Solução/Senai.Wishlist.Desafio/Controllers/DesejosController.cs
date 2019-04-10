@@ -30,7 +30,7 @@ namespace Senai.Wishlist.Desafio.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public IActionResult ListarDesejos()
         {
             try
@@ -47,7 +47,7 @@ namespace Senai.Wishlist.Desafio.Controllers
         }
 
         [HttpGet("verbo/{verboNome}")]
-        [Authorize]
+        //[Authorize]
         public IActionResult ListarPorNomeVerbo(string verboNome)
         {
             try
@@ -64,7 +64,7 @@ namespace Senai.Wishlist.Desafio.Controllers
         }
 
         [HttpGet("usuario/{usuarioNome}")]
-        [Authorize]
+        //[Authorize]
         public IActionResult ListarPorNomeUsuario(string usuarioNome)
         {
             try
@@ -81,7 +81,7 @@ namespace Senai.Wishlist.Desafio.Controllers
         }
 
         [HttpPost]
-        [Authorize]
+        //[Authorize]
         public IActionResult CadastrarDesejo(Desejos desejo)
         {
             try
@@ -107,7 +107,7 @@ namespace Senai.Wishlist.Desafio.Controllers
         }
 
         [HttpPut]
-        [Authorize]
+        //[Authorize]
         public IActionResult AtualizarDesejo(Desejos novoDesejo)
         {
             try
@@ -136,7 +136,7 @@ namespace Senai.Wishlist.Desafio.Controllers
         }
 
         [HttpDelete("{id}")]
-        [Authorize]
+        //[Authorize]
         public IActionResult DeletarDesejo(int id)
         {
             try

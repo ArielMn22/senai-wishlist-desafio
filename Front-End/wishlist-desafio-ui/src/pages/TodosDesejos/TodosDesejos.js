@@ -20,7 +20,7 @@ export default class TodosDesejos extends Component {
 
     buscarMinhasConsultas() {
         // Axios.get('http://localhost:5000/api/desejos/' + localStorage.getItem("usuarioNome"))
-        Axios.get('http://localhost:5000/api/desejos/')
+        Axios.get('http://192.168.3.143:5000/api/desejos/')
         .then(data => {
             console.log(data);
             this.setState({ lista : data.data});

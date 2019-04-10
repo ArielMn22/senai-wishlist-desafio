@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "67e8e7b8-8ba1-4186-9675-7260df8b9c5a",
+		"_postman_id": "1a15b894-12f5-485b-bdf2-3c62a7e1d8e5",
 		"name": "Wishlist - Desafio",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -200,13 +200,13 @@
 							},
 							{
 								"key": "Authorization",
-								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFyaWVscGFpeGFvMTBAZ21haWwuY29tIiwianRpIjoiNSIsImV4cCI6MTU1NDczMjIxOSwiaXNzIjoiV2lzaGxpc3QuV2ViQXBpIiwiYXVkIjoiV2lzaGxpc3QuV2ViQXBpIn0.bgqwfViQ-ZpSFag53_quq3N7yxX4yXR1ANhhsVLSe0w",
+								"value": "bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImFyaWVsQGdtYWlsLmNvbSIsImp0aSI6IjEiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiQXJpZWwiLCJub21lIjoiQXJpZWwiLCJleHAiOjE1NTQ4NTEzNDYsImlzcyI6Ildpc2hsaXN0LldlYkFwaSIsImF1ZCI6Ildpc2hsaXN0LldlYkFwaSJ9.9yUF8IicSusInWs70zmeiqgZrLxruuJRTQC463XAhmA",
 								"type": "text"
 							}
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"idVerbo\": 1,\n\t\"descricao\": \"Quero comprar uma bike da caloi\"\n}"
+							"raw": "{\n\t\"idVerbo\": 2,\n\t\"descricao\": \"Não sei\"\n}"
 						},
 						"url": {
 							"raw": "http://localhost:5000/api/desejos",
@@ -291,6 +291,35 @@
 								"api",
 								"desejos",
 								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Verbos",
+			"item": [
+				{
+					"name": "Listar Verbos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/verbos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"verbos"
 							]
 						}
 					},

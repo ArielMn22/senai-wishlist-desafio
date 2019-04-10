@@ -9,20 +9,29 @@ import {Route, BrowserRouter as Router, Switch, Redirect} from 'react-router-dom
 import CadastrarUsuario from './pages/CadastrarUsuario/CadastrarUsuario';
 import CadastrarDesejo from './pages/CadastroDesejo/CadastrarDesejo'
 import TodosDesejos from './pages/TodosDesejos/TodosDesejos';
+import { usuarioAutenticado } from './services/auth';
+
+const Permissao = ({ component : Component }) => (
+    <Route
+        render = {
+            props => usuarioAutenticado() ? (<Component {...props}/>) : (<Redirect to ={{ pathname : '/login', state: {from: props.location}}}/>)
+        }
+    />
+);
 
 
 const rotas = (
     <Router>
         <div>
             <Switch>
-                <Route exact path="/" component={Login}></Route>
-                <Route exact path="/login" component={Login}></Route>
-                <Route exact path="/cadastrarusuario" component={CadastrarUsuario}></Route>
-                <Route exact path="/cadastrardesejo" component={CadastrarDesejo}></Route>
-                <Route exact path="/meusdesejos" component={MeusDesejos}></Route>
-                <Route exact path="/todosdesejos" component={TodosDesejos}></Route>
-                {/* <Route exact path="/desejos" component={Desejos}></Route> */}
-                {/* <Route component={NaoEncontrada}></Route> */}
+                <Route exact path="/" component={Login} />
+                <Route exact path="/login" component={Login} />
+                <Route exact path="/cadastrarusuario" component={CadastrarUsuario} />
+                <Permissao exact path="/cadastrardesejo" component={CadastrarDesejo} />
+                <Permissao exact path="/meusdesejos" component={MeusDesejos} />
+                <Permissao exact path="/todosdesejos" component={TodosDesejos} />
+                {/* <Route exact path="/desejos" component={Desejos} /> */}
+                {/* <Route component={NaoEncontrada} /> */}
             </Switch>
         </div>
     </Router>
