@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import CabecalhoLogado from '../Components/CabecalhoLogado';
+import Cabecalho from '../Components/Cabecalho';
 import '../../assets/css/login.css'
 import '../../assets/css/cadastrodesejos.css'
 import Axios from 'axios';
+import Rodape from '../Components/Rodape';
 
 class CadastrarDesejo extends Component {
 
@@ -32,7 +33,7 @@ class CadastrarDesejo extends Component {
     render() {
         return (
             <div>
-                <CabecalhoLogado />
+                <Cabecalho />
                 <main>
                     <div className="usuario">
                         <h3>Nome do Usuário</h3>
@@ -46,6 +47,7 @@ class CadastrarDesejo extends Component {
                         </form>
                     </div>
                 </main>
+                <Rodape />
             </div>
         );
     }
