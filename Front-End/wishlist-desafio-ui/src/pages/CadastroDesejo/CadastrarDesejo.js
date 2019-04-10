@@ -14,7 +14,7 @@ class CadastrarDesejo extends Component {
             descricao: "",
             listaVerbos: [],
             categoria: "",
-            categoriaId: "",
+            categoriaId: "6",
             // date: date
         }
 
