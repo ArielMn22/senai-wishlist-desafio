@@ -19,9 +19,9 @@ namespace Senai.Wishlist.Desafio.Controllers
 
         static async Task EnviarEmail()
         {
-            var apiKey = "@APIKey";
+            var apiKey = "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";
             var client = new SendGridClient(apiKey);
-            var from = new EmailAddress("@MyEmail", "@MeuNome");
+            var from = new EmailAddress("arielpaixao10@gmail.com", "Ariel Paixão");
             var subject = assunto;
             var to = new EmailAddress(email.EmailDestinatario, email.NomeDestinatario);
             var plainTextContent = mensagem;
