@@ -15,11 +15,11 @@ class CadastrarDesejo extends Component {
             listaVerbos: [],
             categoria: "",
             categoriaId: "",
-            date: date
+            // date: date
         }
 
-        var today = new Date(),
-            date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        // var today = new Date(),
+        //     date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
 
         this.atualizaEstadoDescricaoForm = this.atualizaEstadoDescricao.bind(this)
     }
