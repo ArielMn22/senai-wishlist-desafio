@@ -1,0 +1,12 @@
+.unico {
+    display: flex;
+    justify-content: center;
+    margin-top: 23%;
+}
+
+.unico h1{
+    background-color: blue;
+    color: white;
+    border: 5px solid orange;    
+    padding: 15px;
+}
