@@ -64,17 +64,7 @@ export default class TodosDesejos extends Component {
     render () {
         return(
             <div>
-                    <header>
-                <section class="header">
-                    <h1>WISHLIST</h1>
-            
-                    <ul>
-                        <li><a href="cadastro.html">Cadastrar</a></li>
-                        <li><a href="login.html">Logar</a></li>
-                    </ul>
-                    
-                </section>
-            </header>
+            <Cabecalho />
             <main>
                 <section id="filterUser" class="pa-all-g">
                     <h2>Filtrar por Usuário</h2>
